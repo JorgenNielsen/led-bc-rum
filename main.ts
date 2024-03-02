@@ -20,6 +20,12 @@ input.onButtonPressed(Button.A, function () {
     strip.show()
 })
 function RelayOff () {
+    led.enable(false)
+    pins.digitalWritePin(DigitalPin.P7, 1)
+    pins.digitalWritePin(DigitalPin.P6, 1)
+    pins.digitalWritePin(DigitalPin.P4, 1)
+    pins.digitalWritePin(DigitalPin.P3, 1)
+    basic.pause(2000)
     pins.digitalWritePin(DigitalPin.P7, 0)
     pins.digitalWritePin(DigitalPin.P6, 0)
     pins.digitalWritePin(DigitalPin.P4, 0)
@@ -82,8 +88,8 @@ let liste1: number[] = []
 let counter = 0
 let strip: neopixel.Strip = null
 let top = 0
+RelayOff()
 top = 53
 strip = neopixel.create(DigitalPin.P1, top, NeoPixelMode.RGB)
 strip.showColor(neopixel.hsl(50, 120, 70))
 strip.show()
-RelayOff()
