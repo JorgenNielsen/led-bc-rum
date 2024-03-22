@@ -91,5 +91,6 @@ let top = 0
 RelayOff()
 top = 53
 strip = neopixel.create(DigitalPin.P1, top, NeoPixelMode.RGB)
+strip.setBrightness(170)
 strip.showColor(neopixel.hsl(50, 120, 70))
 strip.show()
